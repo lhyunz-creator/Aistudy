@@ -101,13 +101,7 @@ def para(doc, text="", size=10, bold=False, italic=False, color=None,
     if indent:
         p.paragraph_format.left_indent = Cm(indent)
     if text:
-        run = p.add_run(text)
-        run.font.size = Pt(size)
-        run.bold = bold
-        run.italic = italic
-        if color is not None:
-            run.font.color.rgb = color
-        _set_cjk(run)
+        _write_marked(p, text, size, force_bold=bold, italic=italic, color=color)
     return p
 
 
@@ -138,7 +132,7 @@ def bullet(doc, text, level=0, size=10, bold_prefix=None):
     p.paragraph_format.line_spacing = 1.3
     if bold_prefix:
         r = p.add_run(bold_prefix); r.bold = True; r.font.size = Pt(size); _set_cjk(r)
-    r = p.add_run(text); r.font.size = Pt(size); _set_cjk(r)
+    _write_marked(p, text, size)
     return p
 
 
@@ -154,7 +148,7 @@ def numbered(doc, text, size=10, bold_prefix=None, n=None):
         r = p.add_run(f"{n}. "); r.bold = True; r.font.size = Pt(size); _set_cjk(r)
     if bold_prefix:
         r = p.add_run(bold_prefix); r.bold = True; r.font.size = Pt(size); _set_cjk(r)
-    r = p.add_run(text); r.font.size = Pt(size); _set_cjk(r)
+    _write_marked(p, text, size)
     return p
 
 
@@ -170,11 +164,7 @@ def callout(doc, text, fill=QUOTE_FILL, bar=HDR_FILL, size=10, bold=False, itali
     p.paragraph_format.space_before = Pt(6)
     p.paragraph_format.space_after = Pt(6)
     p.paragraph_format.left_indent = Cm(0.25)
-    run = p.add_run(text)
-    run.font.size = Pt(size)
-    run.bold = bold
-    run.italic = italic
-    _set_cjk(run)
+    _write_marked(p, text, size, force_bold=bold, italic=italic)
     doc.add_paragraph().paragraph_format.space_after = Pt(2)
     return tbl
 
@@ -241,8 +231,8 @@ def table(doc, headers, rows, widths=None, size=9, header_size=9, zebra=True,
     return tbl
 
 
-def _write_marked(p, text, size, force_bold=False):
-    """**굵게** 마크업만 해석한다."""
+def _write_marked(p, text, size, force_bold=False, italic=False, color=None):
+    """**굵게** 마크업만 해석한다. 표·본문·불릿·인용 블록이 모두 이 함수를 쓴다."""
     parts = text.split("**")
     for idx, part in enumerate(parts):
         if not part:
@@ -250,6 +240,9 @@ def _write_marked(p, text, size, force_bold=False):
         run = p.add_run(part)
         run.font.size = Pt(size)
         run.bold = force_bold or (idx % 2 == 1)
+        run.italic = italic
+        if color is not None:
+            run.font.color.rgb = color
         _set_cjk(run)
 
 
