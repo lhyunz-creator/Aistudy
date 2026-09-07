@@ -14,9 +14,10 @@ AI 관련 컨퍼런스·세션 학습 노트 저장소.
 
 ### AI Infrastructure & Data 2026 (2026-09-02, CIO Korea / ITWORLD)
 
-- [세션 2건 교차 정리 · 종합 체크리스트](notes/2026-09-02-ai-infra-data/README.md)
+- [세션 3건 교차 정리 · 종합 체크리스트](notes/2026-09-02-ai-infra-data/README.md)
 - [01. 유행이 아니라 데이터로 — 무신사의 AI 기술 도입 전략](notes/2026-09-02-ai-infra-data/01-musinsa-ai-adoption.md) · 길기용 (무신사)
 - [02. AI 학습데이터의 국내외 분쟁 동향과 추적가능 컴플라이언스](notes/2026-09-02-ai-infra-data/02-lg-ai-bom.md) · 조정원 (LG AI연구원)
+- [03. Securing AI starts with Identity — AI 에이전트·NHI 거버넌스](notes/2026-09-02-ai-infra-data/03-sailpoint-agentic-identity.md) · Dean Clarke (SailPoint)
 
 ## 공유용 문서 다시 만들기
 
