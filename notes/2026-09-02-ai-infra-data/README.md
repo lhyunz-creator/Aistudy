@@ -1,4 +1,4 @@
-# AI Infrastructure & Data 2026 — 클로징 키노트 2개 세션 정리
+# AI Infrastructure & Data 2026 — 세션 3건 정리
 
 **행사**: AI Infrastructure & Data 2026 (CIO Korea / ITWORLD)
 **일시·장소**: 2026-09-02(수), 서울 드래곤시티 그랜드볼룸 한라(3F)
