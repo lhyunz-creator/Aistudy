@@ -1,0 +1,43 @@
+{
+  "_TODO": "03 데이터딕셔너리 확정 후 columns / values / reorg 값을 실제 값으로 교체할 것",
+
+  "reorg": {
+    "REORG_DATE": "2026-04-01",
+    "REASON_CODE_REORG": "ORG",
+    "REASON_CODE_TRANSFER": "TRF"
+  },
+
+  "thresholds": {
+    "MEMBER_THRESHOLD": 0.9,
+    "SPLIT_MIN_RATIO": 0.1,
+    "CHILD_MATCH_RATIO": 0.5,
+    "REORG_DATE_TOLERANCE": 3
+  },
+
+  "columns": {
+    "orgs": { "orgCode": "orgCode", "orgName": "orgName", "parentCode": "parentCode" },
+    "members": { "userId": "userId", "orgCode": "orgCode", "jobCode": "jobCode" },
+    "assignments": {
+      "userId": "userId",
+      "effectiveDate": "effectiveDate",
+      "reasonCode": "reasonCode",
+      "beforeOrgCode": "beforeOrgCode",
+      "afterOrgCode": "afterOrgCode"
+    },
+    "rules": {
+      "ruleId": "ruleId",
+      "permissionId": "permissionId",
+      "ruleType": "ruleType",
+      "orgCode": "orgCode",
+      "includeSubDept": "includeSubDept",
+      "jobCodes": "jobCodes"
+    }
+  },
+
+  "values": {
+    "BOOL_TRUE": ["Y", "y", "TRUE", "true", "True", "1"],
+    "BOOL_FALSE": ["N", "n", "FALSE", "false", "False", "0", ""],
+    "RULE_TYPE_MAP": { "AUTO": "AUTO", "BLOCK": "BLOCK", "자동화": "AUTO", "통제": "BLOCK" },
+    "MULTI_VALUE_SEP": ";"
+  }
+}

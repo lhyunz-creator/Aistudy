@@ -1,2 +1,4 @@
 __pycache__/
 *.pyc
+reorg_impact/sample_data/
+out/
