@@ -41,4 +41,5 @@ python3 -m reorg_impact --in ./reorg_impact/sample_data --out ./out \
     --config ./reorg_impact/sample_data/config.json
 ```
 
-자세한 내용은 [`reorg_impact/README.md`](reorg_impact/README.md) 참조.
+자세한 내용은 [`reorg_impact/README.md`](reorg_impact/README.md),
+사내 반입 후 작업 순서는 [`reorg_impact/HANDOFF.md`](reorg_impact/HANDOFF.md) 참조.
